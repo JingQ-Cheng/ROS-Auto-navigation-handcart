@@ -82,3 +82,6 @@ roslaunch cartographer_ros carto_slam.launch
   边缘计算模式：在PC上运行roslaunch car_navigation nav_edge.launch 进行算法运算。
 
 ![e282582e45058430a3ec91b5ef68e14](https://user-images.githubusercontent.com/84019859/232469930-fcb0ad56-5f2d-4548-8096-922f7cd20c88.png)
+![实验室建图2](https://user-images.githubusercontent.com/84019859/232491840-a10bdd55-4861-425c-8440-fc6eb494074b.png)
+![大车车](https://user-images.githubusercontent.com/84019859/232491934-4603a3b0-c42d-4d78-842c-0e429c220e17.jpg)
+

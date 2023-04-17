@@ -6,7 +6,7 @@
 
   The project's low cost and easy-to-understand code style make it a perfect introduction to ROS for young and old. You can either put the PC directly on the cart as the main control, or you can control the Raspberry PI or other card computers on the cart through multi-machine communication, and put the computing load on the PC to reduce the burden of the card computer.
 
-![51e53cd47f8c3b0a53b34c64501e69c](https://user-images.githubusercontent.com/84019859/232469754-c3c7c19c-d5f9-486c-8619-1b0e48ae8898.jpg)
+![d31f9bb9a79db7e6042c94b3f39e8799](https://user-images.githubusercontent.com/84019859/232475459-4470f1f2-3041-4cba-b54b-dc68411744cf.jpg)
 
 ![0b6064588cbba641626c8b15550335d](https://user-images.githubusercontent.com/84019859/232471225-f9c6c752-f861-4264-8d00-b0f86028b281.png)
  

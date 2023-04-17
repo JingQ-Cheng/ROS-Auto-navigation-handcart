@@ -6,11 +6,13 @@
 各package功能解释：
 
 uart_set
-通信层代码（重要），这部分代码负责上下位机通信，其中uart_set.launch通信层代码。如果通信发生异常，请独立运行并检查该节点的信息是否有接收或者发送的错误。
+
+通信层代码（重要），这部分代码负责上下位机通信，如果通信发生异常，请独立运行并检查该节点的信息是否有接收或者发送的错误。
 roslaunch uart_set uart_set.launch 
 
 
 keyboard
+
 编写了键盘遥控小车的代码，执行keyboard_control.launch即可人工操控行驶。
 遥控功能使用
 roslaunch uart_set uart_set.launch
@@ -19,6 +21,7 @@ roslaunch keyboard keyboard_control.launch
 
 
 car_navigation 
+
 自主导航和建图，编写了自主导航和建图的launch脚本，算法本体由ros自带，不在本功能包中。
 在使用本文件夹下任何建图或导航功能前，都需要先启动硬件。
 roslaunch car_navigation hardware.launch 启动硬件层

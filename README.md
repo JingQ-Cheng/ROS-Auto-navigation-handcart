@@ -16,13 +16,13 @@ The project's low cost and easy-to-understand code style make it a perfect intro
 
 各package功能解释：
 
--uart_set
+- uart_set
 
 通信层代码（重要），这部分代码负责上下位机通信，如果通信发生异常，请独立运行并检查该节点的信息是否有接收或者发送的错误。
 roslaunch uart_set uart_set.launch 
 
 
--keyboard
+- keyboard
 
 编写了键盘遥控小车的代码，执行keyboard_control.launch即可人工操控行驶。
 遥控功能使用
@@ -31,7 +31,7 @@ roslaunch keyboard keyboard_control.launch
 如果您中途重启了通信层，keyboard同样需要重新启动才能继续使用遥控功能。
 
 
--car_navigation 
+- car_navigation 
 
 自主导航和建图，编写了自主导航和建图的launch脚本，算法本体由ros自带，不在本功能包中。
 在使用本文件夹下任何建图或导航功能前，都需要先启动硬件。
@@ -39,13 +39,13 @@ roslaunch car_navigation hardware.launch 启动硬件层
 
 建图功能使用
 
--Gamping算法（ros经典算法，老少咸宜）
+- Gamping算法（slam经典算法）
 
 roslaunch car_navigation gmaping_mapping.launch 使用gmaping算法建图
 
 rosrun map_server map_saver -f gmapping1 保存名为gmapping1的地图（在工程所在的文件中可以找到）
 
--cartographer算法（谷歌商业化算法，成熟稳定，适合大图，笔记本建议用这个）
+- cartographer算法（谷歌商业化算法，成熟稳定，适合大图，笔记本建议用这个）
 
 需要另开一个终端，在driveless_test0下的cartographer_ws中执行：
 
@@ -63,14 +63,14 @@ cartographer_ws/src/cartographer_ros/cartographer_ros/configuration_files/My_del
 如果你修改了该两个文件，都需要在cartographer_ws下执行catkin_make_isolated --install --use-ninja进行编译。
 
 
--导航功能使用
+- 导航功能使用
 
 在车上运行工控机/PC
 roslaunch car_navigation slam_and_nav.launch 同时建图和导航（无地图下使用）
 
 roslaunch car_navigation nav_pc.launch  pc或者工控机使用自主导航（有地图，需要在nav_star.launch中设置yaml来配置目标地图，默认是一张空地图）
 
--多机通信，在车上运行卡片电脑。
+- 多机通信，在车上运行卡片电脑。
 
 同样需要在单板机上先运行 roslaunch car_navigation hardware.launch
 

@@ -9,7 +9,9 @@
 ![51e53cd47f8c3b0a53b34c64501e69c](https://user-images.githubusercontent.com/84019859/232469754-c3c7c19c-d5f9-486c-8619-1b0e48ae8898.jpg)
 
 ![0b6064588cbba641626c8b15550335d](https://user-images.githubusercontent.com/84019859/232471225-f9c6c752-f861-4264-8d00-b0f86028b281.png)
-  我在本项目中使用了NanoPi neo4作为小推车的ROS主控，并用笔记本电脑和rk3399进行多机通信。
+ 
+ 我在本项目中使用了NanoPi neo4作为小推车的ROS主控，并用笔记本电脑和rk3399进行多机通信。
+ 
 ![框架-工控机](https://user-images.githubusercontent.com/84019859/232474935-23d2e88b-83c4-454b-883f-deb010c8c711.png)
 
 
@@ -42,9 +44,9 @@ roslaunch car_navigation hardware.launch 启动硬件层
 
 - Gamping算法（slam经典算法）
 
-roslaunch car_navigation gmaping_mapping.launch 使用gmaping算法建图
+  roslaunch car_navigation gmaping_mapping.launch 使用gmaping算法建图
 
-rosrun map_server map_saver -f gmapping1 保存名为gmapping1的地图（在工程所在的文件中可以找到）
+  rosrun map_server map_saver -f gmapping1 保存名为gmapping1的地图（在工程所在的文件中可以找到）
 
 - cartographer算法（谷歌商业化算法，成熟稳定，适合大图，笔记本建议用这个）
 

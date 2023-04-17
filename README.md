@@ -29,13 +29,19 @@ roslaunch car_navigation hardware.launch 启动硬件层
 建图功能使用
 
 Gamping算法（ros经典算法，老少咸宜）
+
 roslaunch car_navigation gmaping_mapping.launch 使用gmaping算法建图
+
 rosrun map_server map_saver -f gmapping1 保存名为gmapping1的地图（在工程所在的文件中可以找到）
 
 cartographer算法（谷歌商业化算法，成熟稳定，适合大图，笔记本建议用这个）
+
 需要另开一个终端，在driveless_test0下的cartographer_ws中执行：
+
 source install_isolated/setup.bash
+
 roslaunch cartographer_ros carto_star.launch
+
 然后在driveless_test0下执行：
 roslaunch cartographer_ros carto_slam.launch
 

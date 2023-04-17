@@ -1,0 +1,31 @@
+<!--please put it in cartographer_ws/src/cartographer_ros/cartographer_ros/launch/ -->
+<!--the 'cartographer_ws' is your cartographer install location-->
+
+<launch>
+
+<!--开启cartographer建图算法-->
+  <!--use_sim_time是是个离线调试工具，true时开启，可以配合Rosbag使用。-->
+  <param name="/use_sim_time" value="false" />
+
+  <!-- 建图节点,更改下面的configuration_directory和configuration_basename的路径 -->
+  <node name="cartographer_node" pkg="cartographer_ros"
+      type="cartographer_node" args="
+          -configuration_directory $(find cartographer_ros)/configuration_files
+          -configuration_basename My_delta_lidar.lua"
+      output="screen">
+		<!-- 更改horizontal_laser_2d为我们的雷达话题 -->
+    <remap from="scan" to="scan" />
+		<!-- 更改odom为里程计话题 -->
+    <!--remap from="odom" to="odom_combine" /-->
+    <!--remap from="imu" to="imu" /-->
+  </node>
+  
+  <!-- 建图分辨率参数 -->
+  <node name="cartographer_occupancy_grid_node" pkg="cartographer_ros"
+      type="cartographer_occupancy_grid_node" args="-resolution 0.05" />
+  
+  <!-- rvzi -->
+  <!--node name="rviz" pkg="rviz" type="rviz" required="true"
+      args="-d $(find cartographer_ros)/configuration_files/demo_2d.rviz" /-->
+
+</launch>

@@ -1,0 +1,3 @@
+../Core/Src/custom_c/Callback.c:14:6:HAL_GPIO_EXTI_Callback	16	static
+../Core/Src/custom_c/Callback.c:23:6:HAL_UARTEx_RxEventCallback	16	static
+../Core/Src/custom_c/Callback.c:54:6:HAL_TIM_PeriodElapsedCallback	16	static

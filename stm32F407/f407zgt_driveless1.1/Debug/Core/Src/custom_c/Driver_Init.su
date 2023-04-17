@@ -1,0 +1,2 @@
+../Core/Src/custom_c/Driver_Init.c:17:6:Peripheral_Init	8	static
+../Core/Src/custom_c/Driver_Init.c:28:6:Peripheral_Stop	4	static

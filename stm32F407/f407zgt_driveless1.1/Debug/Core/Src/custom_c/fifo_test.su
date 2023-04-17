@@ -1,0 +1,3 @@
+../Core/Src/custom_c/fifo_test.c:11:6:FIFO_init	24	static
+../Core/Src/custom_c/fifo_test.c:20:6:FIFO_read	32	static
+../Core/Src/custom_c/fifo_test.c:50:6:FIFO_write	40	static

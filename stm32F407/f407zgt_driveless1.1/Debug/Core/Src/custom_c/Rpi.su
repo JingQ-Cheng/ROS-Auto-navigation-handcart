@@ -1,0 +1,2 @@
+../Core/Src/custom_c/Rpi.c:28:6:Read_Speed	32	static
+../Core/Src/custom_c/Rpi.c:176:6:Write_Speed	32	static

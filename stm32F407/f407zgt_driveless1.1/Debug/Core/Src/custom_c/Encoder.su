@@ -1,0 +1,2 @@
+../Core/Src/custom_c/Encoder.c:21:7:Encoder_PWMtoSpeed	16	static
+../Core/Src/custom_c/Encoder.c:31:5:Encoder_SpeedtoPWM	16	static

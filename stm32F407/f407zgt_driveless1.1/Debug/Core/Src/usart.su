@@ -1,0 +1,4 @@
+../Core/Src/usart.c:33:6:MX_UART5_Init	8	static
+../Core/Src/usart.c:62:6:MX_USART6_UART_Init	8	static
+../Core/Src/usart.c:90:6:HAL_UART_MspInit	56	static
+../Core/Src/usart.c:192:6:HAL_UART_MspDeInit	16	static

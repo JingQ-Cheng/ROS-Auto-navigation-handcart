@@ -9,7 +9,7 @@ The project's low cost and easy-to-understand code style make it a perfect intro
 ![51e53cd47f8c3b0a53b34c64501e69c](https://user-images.githubusercontent.com/84019859/232469754-c3c7c19c-d5f9-486c-8619-1b0e48ae8898.jpg)
 
 ![0b6064588cbba641626c8b15550335d](https://user-images.githubusercontent.com/84019859/232471225-f9c6c752-f861-4264-8d00-b0f86028b281.png)
-我在本项目中使用了rk3399作为小推车的ROS主控，并用笔记本电脑和rk3399进行多机通信。
+我在本项目中使用了NanoPi neo4作为小推车的ROS主控，并用笔记本电脑和rk3399进行多机通信。
 
 
 各package功能解释：

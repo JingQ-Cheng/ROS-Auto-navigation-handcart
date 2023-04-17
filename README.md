@@ -51,13 +51,18 @@ cartographer_ws/src/cartographer_ros/cartographer_ros/configuration_files/My_del
 目前该算法的配置是同时使用imu和激光，实测融合编码器后反而效果变差。
 如果你修改了该两个文件，都需要在cartographer_ws下执行catkin_make_isolated --install --use-ninja进行编译。
 
+
 导航功能使用
+
 在车上运行工控机/PC
 roslaunch car_navigation slam_and_nav.launch 同时建图和导航（无地图下使用）
+
 roslaunch car_navigation nav_pc.launch  pc或者工控机使用自主导航（有地图，需要在nav_star.launch中设置yaml来配置目标地图，默认是一张空地图）
 
 多机通信，在车上运行单板机，我的单板机是nanopi neo4
+
 同样需要在单板机上先运行 roslaunch car_navigation hardware.launch
+
 单板机下独立运行导航：roslaunch car_navigation nav_neo.launch 适合在，用pc终端rviz即可查看
 
 边缘计算模式：在PC上运行roslaunch car_navigation nav_edge.launch 进行算法运算。

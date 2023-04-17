@@ -52,3 +52,5 @@ roslaunch car_navigation nav_pc.launch  pc或者工控机使用自主导航（�
 单板机下独立运行导航：roslaunch car_navigation nav_neo.launch 适合在，用pc终端rviz即可查看
 
 边缘计算模式：在PC上运行roslaunch car_navigation nav_edge.launch 进行算法运算。
+
+![e282582e45058430a3ec91b5ef68e14](https://user-images.githubusercontent.com/84019859/232469930-fcb0ad56-5f2d-4548-8096-922f7cd20c88.png)

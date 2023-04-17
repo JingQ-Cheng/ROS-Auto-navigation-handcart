@@ -1,7 +1,0 @@
-<launch>
-  
-  <node name="keyboard_control_node" pkg="keyboard" type="keyboard_control.py" output="screen">
-  </node>
-  <!--启动UART通信层-->
-  <!--include file="$(find uart_set)/launch/uart_set.launch" /-->
-</launch>

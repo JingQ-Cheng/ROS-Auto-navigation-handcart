@@ -47,16 +47,16 @@ rosrun map_server map_saver -f gmapping1 保存名为gmapping1的地图（在工
 
 - cartographer算法（谷歌商业化算法，成熟稳定，适合大图，笔记本建议用这个）
 
-需要另开一个终端，在driveless_test0下的cartographer_ws中执行：
+  需要另开一个终端，在driveless_test0下的cartographer_ws中执行：
 
-source install_isolated/setup.bash
+  source install_isolated/setup.bash
 
-roslaunch cartographer_ros carto_star.launch
-
-然后在driveless_test0下执行：
+  roslaunch cartographer_ros carto_star.launch
+  
+  然后在driveless_test0下执行：
 roslaunch cartographer_ros carto_slam.launch
 
-如果您想要调整参数(传感器融合)，需要在以下路径的文件中修改
+  如果您想要调整参数(传感器融合)，需要在以下路径的文件中修改
 cartographer_ws/src/cartographer_ros/cartographer_ros/launch/carto_star.launch
 cartographer_ws/src/cartographer_ros/cartographer_ros/configuration_files/My_delta_lidar.lua
 目前该算法的配置是同时使用imu和激光，实测融合编码器后反而效果变差。
@@ -65,14 +65,14 @@ cartographer_ws/src/cartographer_ros/cartographer_ros/configuration_files/My_del
 
 - 导航功能使用
 
-在车上运行工控机/PC
+  在车上运行工控机/PC
 roslaunch car_navigation slam_and_nav.launch 同时建图和导航（无地图下使用）
 
 roslaunch car_navigation nav_pc.launch  pc或者工控机使用自主导航（有地图，需要在nav_star.launch中设置yaml来配置目标地图，默认是一张空地图）
 
 - 多机通信，在车上运行卡片电脑。
 
-同样需要在单板机上先运行 roslaunch car_navigation hardware.launch
+  同样需要在单板机上先运行 roslaunch car_navigation hardware.launch
 
 单板机下独立运行导航：roslaunch car_navigation nav_neo.launch 适合在，用pc终端rviz即可查看
 

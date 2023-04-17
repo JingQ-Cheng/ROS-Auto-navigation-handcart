@@ -11,6 +11,7 @@ The project's low cost and easy-to-understand code style make it a perfect intro
 ![0b6064588cbba641626c8b15550335d](https://user-images.githubusercontent.com/84019859/232471225-f9c6c752-f861-4264-8d00-b0f86028b281.png)
 我在本项目中使用了NanoPi neo4作为小推车的ROS主控，并用笔记本电脑和rk3399进行多机通信。
 
+-
 
 
 各package功能解释：
@@ -69,7 +70,7 @@ roslaunch car_navigation slam_and_nav.launch 同时建图和导航（无地图�
 
 roslaunch car_navigation nav_pc.launch  pc或者工控机使用自主导航（有地图，需要在nav_star.launch中设置yaml来配置目标地图，默认是一张空地图）
 
-多机通信，在车上运行单板机，我的单板机是nanopi neo4
+多机通信，在车上运行卡片电脑。
 
 同样需要在单板机上先运行 roslaunch car_navigation hardware.launch
 

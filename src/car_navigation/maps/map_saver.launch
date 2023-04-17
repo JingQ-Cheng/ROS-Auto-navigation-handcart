@@ -1,0 +1,4 @@
+<launch>
+	<node pkg="map_server" type="map_saver" name="map_saver1" args="-f /home/passoni/driveless_test0/src/car_navigation/maps" output="screen">	
+	</node>
+</launch>

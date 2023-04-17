@@ -1,0 +1,5 @@
+<launch>
+
+    <node pkg="uart_set" type="uart_set" name="uart_set1" output="screen" />
+
+</launch>

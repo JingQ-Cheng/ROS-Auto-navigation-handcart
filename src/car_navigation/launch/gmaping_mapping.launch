@@ -1,0 +1,15 @@
+<launch>
+
+<!--坐标模型--> 
+    <!-- 发布用于建图、导航的TF关系与小车外形可视化 -->
+    <include file="$(find car_navigation)/launch/include/TF_description.launch" />
+
+    <!-- 卡尔曼滤波 发布odom_combined到footprint的TF(小车定位) 注:使用cartographer算法时不用该滤波-->
+    <include file="$(find car_navigation)/launch//include/robot_pose_ekf.launch" />
+
+<!--开启gmaping建图算法-->
+<include file="$(find car_navigation)/launch/include/slam_gmapping.launch"/>
+
+<node pkg="rviz" type="rviz" name="rviz" args="-d $(find car_navigation)/rviz/gmapping.rviz" />
+
+</launch>

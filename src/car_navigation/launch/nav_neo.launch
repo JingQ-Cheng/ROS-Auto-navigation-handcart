@@ -1,0 +1,50 @@
+<!-- 激光雷达导航的核心launch,在单板机独立运行时使用-->
+
+<launch>
+
+<!--启动硬件-->
+
+    <!--启动UART通信层-->
+    <!--include file="$(find uart_set)/launch/uart_test.launch" /-->
+    <!--启动IMU-->
+    <include file="$(find imu_package)/launch/ahrs_data.launch" />
+    <!--启动激光雷达-->
+    <include file="$(find lsn10)/launch/lsn10.launch" />
+    <!--启动摄像头-->
+
+    <!--启动服务器连接-->
+
+
+<!--地图配置-->
+
+    <!-- 地图的配置文件 -->
+    <arg name="map_file" default="$(find car_navigation)/map/void.yaml"/>
+
+    <!--运行地图服务器，并且加载原先建好的地图，arg后面为地图存放路径-->
+    <node name="map_server" pkg="map_server" type="map_server" args="$(find car_navigation)/maps/void.yaml"/>
+
+
+<!--坐标模型--> 
+    <!-- 发布用于建图、导航的TF关系与小车外形可视化 -->
+    <include file="$(find car_navigation)/launch/include/TF_description.launch" />
+
+    <!-- 卡尔曼滤波 发布odom_combined到footprint的TF(小车定位) 注:使用cartographer算法时不用该滤波-->
+    <include file="$(find car_navigation)/launch/include/robot_pose_ekf.launch" />
+
+
+<!--导航定位算法-->
+
+    <!-- 开启局部路径规划算法-->
+    <include file="$(find car_navigation)/launch/include/dwa_local_planner.launch" />
+    
+    <!-- 启动AMCL概率定位 -->
+    <include file="$(find car_navigation)/launch/include/amcl.launch" />
+
+    <!-- MarkerArray功能节点，发布目标点-->
+    <node name='send_mark' pkg="car_navigation" type="send_mark.py" />
+ 
+
+<!-- 运行rviz -->
+    <!--node pkg="rviz" type="rviz" name="rviz" args="-d $(find car_navigation)/rviz/nav.rviz"/-->
+
+</launch>

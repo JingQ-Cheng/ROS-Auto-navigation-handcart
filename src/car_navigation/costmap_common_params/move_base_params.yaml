@@ -1,0 +1,78 @@
+
+#设置全局路径规划器
+#base_global_planner: "carrot_planner/CarrotPlanner"
+#base_global_planner: "navfn/NavfnROS" 
+base_global_planner: "global_planner/GlobalPlanner"
+
+#设置局部路径规划器
+#局部路径规划器会在文件teb_local_planner.launch、dwa_local_planner.launch设置
+#base_local_planner: "dwa_local_planner/DWAPlannerROS"
+base_local_planner: "teb_local_planner/TebLocalPlannerROS"
+
+#发布机器人速度控制命令话题cmd_vel的频率 HZ
+controller_frequency: 10.0 
+
+#全局路径规划器的规划频率，如果设置为0，仅在设置目标点位置时执行一次 HZ
+planner_frequency: 1.0  
+
+#路径规划失败后，尝试重新规划几次后才执行恢复行为，-1代表无限重试
+max_planning_retries: 2  
+
+#当move_base在不活动状态时,是否关掉代价地图的更新
+shutdown_costmaps: false  
+
+#配置恢复行为
+recovery_behaviors:  
+  #自定义恢复行为名称
+  - name: 'recovery_behavior_1'  
+  #选择恢复行为类型
+    type: 'clear_costmap_recovery/ClearCostmapRecovery'  
+
+  #- name: 'recovery_behavior_2'  
+  #选择恢复行为类型
+  #  type: 'rotate_recovery/RotateRecovery'  
+
+  - name: 'recovery_behavior_2' 
+  #选择恢复行为类型 
+    type: 'move_slow_and_clear/MoveSlowAndClear'  
+ 
+#是否开启恢复行为
+recovery_behavior_enabled: true 
+#是否开启恢复行为中控制机器人旋转的恢复行为。此参数仅在move_base使用默认恢复行为时使用。
+clearing_rotation_allowed: false 
+#执行恢复行为时，与机器人距离3米外的障碍物会被清除。此参数仅在move_base使用默认恢复行为时使用。
+conservative_reset_dist: 3.0
+
+
+#全局规划失败大于多长时间后，执行恢复行为，单位：s
+planner_patience: 1.5  
+#局部规划失败超过时间，执行恢复行为
+controller_patience: 1.5 
+
+#当机器人在运动，但是运动幅度不大于多少时，认为机器人处于振荡状态，单位：m
+oscillation_distance: 0.02  
+#机器人处于振荡状态多久后，执行恢复行为
+oscillation_timeout: 5 
+
+#设置恢复行为参数
+recovery_behavior_1:
+  #与机器人距离4米外的障碍物会被清除
+  reset_distance: 4.0  
+
+recovery_behavior_2:
+  #与机器人距离2米外的障碍物会被清除
+  reset_distance: 2.0  
+
+recovery_behavior_3:
+  #与机器人距离1米外的障碍物会被清除
+  clearing_distance: 1.0
+  #限制恢复行为时机器人的线速度，单位：m/s
+  limited_trans_speed: 0.6  
+  #限制恢复行为时机器人的角速度，单位：rad/s
+  limited_rot_speed: 1  
+  #完成该恢复行为机器人必须移动的距离，单位：m
+  limited_distance: 0.3  
+ 
+  #对应的局部路径规划器的名称
+  #planner_namespace: “DWAPlannerROS”
+  planner_namespace: TebLocalPlannerROS

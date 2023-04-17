@@ -1,0 +1,17 @@
+<!-- 启动通信以及各种传感器-->
+
+<launch>
+
+<!--启动硬件-->
+
+    <!--启动UART通信层-->
+    <include file="$(find uart_set)/launch/uart_set.launch" />
+    <!--启动IMU-->
+    <include file="$(find imu_package)/launch/ahrs_data.launch" />
+    <!--启动激光雷达-->
+    <include file="$(find lsn10)/launch/lsn10.launch" />
+    <!--启动摄像头-->
+
+    <!--启动服务器连接-->
+
+</launch>

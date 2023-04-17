@@ -1,0 +1,45 @@
+<!--启动slam建图的launch-->
+
+<launch>
+<!--在default选择slam算法-->
+  <arg name="mapping_mode"  default="gmapping" doc="opt: gmapping,hector,cartographer,karto"/>
+
+
+<!--启动硬件-->
+  <!--开启雷达  -->
+  <include file="$(find lsn10)/launch/lsn10.launch" />
+  <!--启动UART通信层-->
+  <include file="$(find uart_set)/launch/uart_set.launch" />
+  <!--启动IMU-->
+  <include file="$(find imu_package)/launch/ahrs_data.launch" /> 
+
+
+<!--坐标模型--> 
+    <!-- 发布用于建图、导航的TF关系与小车外形可视化 -->
+    <include file="$(car_navigation)/launch/include/TF_description.launch" />
+
+    <!-- 卡尔曼滤波 发布odom_combined到footprint的TF(小车定位) 注:使用cartographer算法时不用该滤波-->
+    <include file="$(find car_navigation)/launch/robot_pose_ekf.launch" />
+
+    <!-- 开启gmapping建图算法  -->
+    <group if="$(eval mapping_mode == 'gmapping')">
+    <include file="$(find car_navigation)/launch/include/gmapping.launch" />
+    </group>
+    
+    <!-- 开启hector建图算法  -->
+    <group if="$(eval mapping_mode == 'hector')">
+    <include file="$(find turn_on_wheeltec_robot)/launch/include/algorithm_hector.launch" />
+    </group>
+
+    <!-- 开启karto建图算法  -->
+    <group if="$(eval mapping_mode == 'karto')">
+    <include file="$(find turn_on_wheeltec_robot)/launch/include/algorithm_karto.launch" />
+  </group>
+
+    <!-- 开启cartographer建图算法  -->
+    <group if="$(eval mapping_mode == 'cartographer')">
+    <!--这个功能包的路径是：/opt/ros/melodic/share/cartographer_ros-->
+    <!--include file="$(find cartographer_ros)/launch/demo_revo_lds.launch" /-->
+    </group> 
+
+</launch>

@@ -1,0 +1,22 @@
+<launch>
+
+  <!-- navigation common params-->
+  <rosparam file="$(find car_navigation)/costmap_common_params/local_costmap_params.yaml"      command="load" ns="move_base"/>
+  <rosparam file="$(find car_navigation)/costmap_common_params/global_costmap_params.yaml"     command="load" ns="move_base"/>
+  <rosparam file="$(find car_navigation)/costmap_common_params/move_base_params.yaml"          command="load" ns="move_base"/>
+  <rosparam file="$(find car_navigation)/costmap_common_params/base_global_planner_param.yaml" command="load" ns="move_base"/>
+  
+  <param name="move_base/base_local_planner"    type="string" value="dwa_local_planner/DWAPlannerROS"/>
+
+  <!-- car_mode and params-->
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+    <rosparam file="$(find car_navigation)/costmap_common_params/dwa_local_planner_params.yaml"  command="load"/>
+    <rosparam file="$(find car_navigation)/costmap_common_params/costmap_common_params.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find car_navigation)/costmap_common_params/costmap_common_params.yaml" command="load" ns="local_costmap" />
+  </node>
+
+  </launch>
+
+
+
+

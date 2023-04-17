@@ -10,6 +10,7 @@
 
 ![0b6064588cbba641626c8b15550335d](https://user-images.githubusercontent.com/84019859/232471225-f9c6c752-f861-4264-8d00-b0f86028b281.png)
   我在本项目中使用了NanoPi neo4作为小推车的ROS主控，并用笔记本电脑和rk3399进行多机通信。
+![框架-工控机](https://user-images.githubusercontent.com/84019859/232474935-23d2e88b-83c4-454b-883f-deb010c8c711.png)
 
 
 

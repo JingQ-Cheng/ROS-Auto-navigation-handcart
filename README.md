@@ -1,10 +1,10 @@
 # Auto_navigation_handcart
   本项目是一辆ROS的自主导航小推车。该ROS机器人将小推车作为底盘，并为它装了两个直流电机以产生动力。传感器方面采用激光雷达、IMU、编码器、摄像头。实现了自主定位，导航，slam，opencv等功能。
-  该项目成本低廉，代码风格简单易懂，老少咸宜，作为ROS入门学习非常合适。您既可以在PC直接放在小推车上作为主控，也可以通过多机通信的方式控制小推车上的树莓派或其他卡片电脑，并把计算负载放在PC上以减小卡片电脑的负担。
+  该项目成本低廉，代码风格简单易懂，老少咸宜，适合ROS入门学习。您既可以将PC直接放置在小推车上作为主控，也可以通过多机通信的方式控制小推车上的树莓派或其他卡片电脑，并把计算负载放在PC上以减小卡片电脑的负担。
 
   This project is a ROS autonomous navigation trolley. The ROS robot uses a trolley as a chassis and is equipped with two DC motors to generate power. Sensor using laser radar, IMU, encoder, camera. Autonomous positioning, navigation, slam, opencv and other functions are realized.
 
-  The project's low cost and easy-to-understand code style make it a perfect introduction to ROS for young and old. You can either put the PC directly on the cart as the main control, or you can control the Raspberry PI or other card computers on the cart through multi-machine communication, and put the computing load on the PC to reduce the burden of the card computer.
+  The project's low cost and easy-to-understand code style make it suitable for young and old to get started with ROS. You can place the PC directly on the cart as the main control, or you can control the Raspberry PI or other card computers on the cart through multi-machine communication, and put the computing load on the PC to reduce the burden of the card computer.
 
 ![car](https://user-images.githubusercontent.com/84019859/232475787-6a4f2c0c-a1a9-41a1-a8b0-fea47ad15463.jpg)
 

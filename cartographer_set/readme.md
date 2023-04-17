@@ -1,4 +1,4 @@
-两个文件的放置位置
+两个文件的放置位置：
 
 cartographer_ws/src/cartographer_ros/cartographer_ros/launch/carto_star.launch
 

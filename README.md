@@ -9,7 +9,7 @@ It takes stm32F407 as the motion control center, and uses laser radar, IMU, enco
 
 The project's low cost and easy-to-understand code style make it suitable for young and old to get started with ROS.
 
-视频地址： https://www.bilibili.com/video/BV1fj411D7Xz/?share_source=copy_web&vd_source=ba09f5329ccbdf0cbc6d31f78a69ca93
+演示视频地址： https://www.bilibili.com/video/BV1fj411D7Xz/?share_source=copy_web&vd_source=ba09f5329ccbdf0cbc6d31f78a69ca93
 
 ![car](https://user-images.githubusercontent.com/84019859/232475787-6a4f2c0c-a1a9-41a1-a8b0-fea47ad15463.jpg)
 

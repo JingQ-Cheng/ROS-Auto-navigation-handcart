@@ -2,12 +2,12 @@
   本项目是一辆ROS自主导航小推车。该ROS机器人将小推车作为底盘，并装载了两个直流电机以产生动力，实现了自主定位，导航，slam，opencv等功能。
   它以stm32F407作为运动控制中心，传感器方面采用激光雷达、IMU、编码器、摄像头。您既可以将笔记本电脑直接放置在小推车上作为ROS主控，也可以通过多机通信的方式控制小推车上的树莓派或其他卡片电脑，采用分布式计算的方式来减小卡片电脑的负担。 
   该项目成本低廉，代码风格简单易懂，老少咸宜，适合ROS入门学习。
+  什么选择使用小推车？因为购买一辆小推车的价格是非常便宜的，大约10-50￥（约6$）就可以买到。这比去网上购买的定制小车底盘更便宜，体积更大，运输能力更强大，你甚至可以将你的笔记本电脑放在上面。
 
-This project is an ROS autonomous navigation trolley. The ROS robot uses a trolley as a chassis and is loaded with two DC motors to generate power, realizing autonomous positioning, navigation, slam, opencv and other functions.
-
-It takes stm32F407 as the motion control center, and uses laser radar, IMU, encoder and camera as the sensor. You can either place the laptop directly on the trolley as the ROS master, or you can control the Raspberry PI or other card computers on the trolley through multi-machine communication, and put the computing load on the PC to reduce the load on the card computer.
-
-The project's low cost and easy-to-understand code style make it suitable for young and old to get started with ROS.
+  This project is an ROS autonomous navigation trolley. The ROS robot uses a trolley as a chassis and is loaded with two DC motors to generate power, realizing autonomous positioning, navigation, slam, opencv and other functions.
+  It takes stm32F407 as the motion control center, and uses laser radar, IMU, encoder and camera as the sensor. You can either place the laptop directly on the trolley as the ROS master, or you can control the Raspberry PI or other card computers on the trolley through multi-machine communication, and put the computing load on the PC to reduce the load on the card computer.
+  The project's low cost and easy-to-understand code style make it suitable for young and old to get started with ROS.
+  Why do I use a cart? Because the price of buying a cart is very cheap, about 10-50￥(about $6) can be bought. It is larger, more powerful transport, cheaper than going online to buy a custom car chassis,you can even put your laptop on it.
 
 演示视频地址： https://www.bilibili.com/video/BV1fj411D7Xz/?share_source=copy_web&vd_source=ba09f5329ccbdf0cbc6d31f78a69ca93
 

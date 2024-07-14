@@ -9,6 +9,8 @@
   
   更详细的说明文档和教程在 自主推车操作指南及教程.pdf中，目前只有中文版的pdf.
 
+联系邮箱：2548383742@qq.com
+
   This project is an ROS autonomous navigation trolley. The ROS robot uses a trolley as a chassis and is loaded with two DC motors to generate power, realizing autonomous positioning, navigation, slam, opencv and other functions.
   
   It takes stm32F407 as the motion control center, and uses laser radar, IMU, encoder and camera as the sensor. You can either place the laptop directly on the trolley as the ROS master, or you can control the Raspberry PI or other card computers on the trolley through multi-machine communication, and put the computing load on the PC to reduce the load on the card computer.
@@ -16,7 +18,9 @@
   
   Why do I use a cart? Because the price of buying a cart is very cheap, about 10-50￥(about $6) can be bought. It is larger, more powerful transport, cheaper than going online to buy a custom car chassis,you can even put your laptop on it.
 
-演示视频地址： https://www.bilibili.com/video/BV1fj411D7Xz/?share_source=copy_web&vd_source=ba09f5329ccbdf0cbc6d31f78a69ca93
+My E-mail: 2548383742@qq.com
+
+演示视频地址demo video： https://www.bilibili.com/video/BV1fj411D7Xz/?share_source=copy_web&vd_source=ba09f5329ccbdf0cbc6d31f78a69ca93
 
 ![car](https://user-images.githubusercontent.com/84019859/232475787-6a4f2c0c-a1a9-41a1-a8b0-fea47ad15463.jpg)
 

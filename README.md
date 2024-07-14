@@ -7,7 +7,7 @@
   
   什么选择使用小推车？因为购买一辆小推车的价格是非常便宜的，大约10-50￥（约6$）就可以买到。(虽然我们是从废品站捡来的[doge]) 这比去网上购买的定制小车底盘更便宜，体积更大，运输能力更强大，你甚至可以将你的笔记本电脑放在上面。
   
-  更详细的说明文档和教程在 自主推车操作指南及教程.pdf中，目前只有中文的pdf文件。
+  更详细的说明文档和教程在 自主推车操作指南及教程.pdf中，目前只有中文版的pdf。
 
   This project is an ROS autonomous navigation trolley. The ROS robot uses a trolley as a chassis and is loaded with two DC motors to generate power, realizing autonomous positioning, navigation, slam, opencv and other functions.
   

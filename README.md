@@ -5,7 +5,7 @@ This project is an ROS autonomous navigation trolley. The ROS robot uses a troll
   It takes stm32F407 as the motion control center, and uses laser radar, IMU, encoder and camera as the sensor. You can either place the laptop directly on the trolley as the ROS master, or you can control the Raspberry PI or other card computers on the trolley through multi-machine communication, and put the computing load on the PC to reduce the load on the card computer.
   The project's low cost and easy-to-understand code style make it suitable for young and old to get started with ROS.
   
-  Why do I use a cart? Because the price of buying a cart is very cheap, about 10-50￥(about $6) can be bought. It is larger, more powerful transport, cheaper than going online to buy a custom car chassis,you can even put your laptop on it.
+  Why do I use a cart? Because the price of buying a cart is very cheap, about $6 can be bought. It is larger, more powerful transport, cheaper than going online to buy a custom car chassis,you can even put your laptop on it.
 
 My E-mail: 2548383742@qq.com
   

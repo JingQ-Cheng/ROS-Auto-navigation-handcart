@@ -20,7 +20,11 @@
 
 My E-mail: 2548383742@qq.com
 
-# **package introduce：**
+演示视频地址/demo video： https://www.bilibili.com/video/BV1fj411D7Xz/?share_source=copy_web&vd_source=ba09f5329ccbdf0cbc6d31f78a69ca93
+
+![car](https://user-images.githubusercontent.com/84019859/232475787-6a4f2c0c-a1a9-41a1-a8b0-fea47ad15463.jpg)
+
+# **package introduce**
 
 - uart_set
   The function of this part of the code is to establish communication between the PC and the MCU by UART. 
@@ -50,7 +54,7 @@ My E-mail: 2548383742@qq.com
   自主导航和建图，编写了自主导航和建图的launch脚本，算法本体由ros自带，不在本功能包中。
   在使用本文件夹下任何建图或导航功能前，都需要先启动硬件。
 
-  # use slam:
+# use slam:
   建图功能使用
 
 - Gamping
@@ -115,9 +119,7 @@ My E-mail: 2548383742@qq.com
   This is the imu feature pack, you can replace it with your imu SDK.
 
   
-演示视频地址demo video： https://www.bilibili.com/video/BV1fj411D7Xz/?share_source=copy_web&vd_source=ba09f5329ccbdf0cbc6d31f78a69ca93
 
-![car](https://user-images.githubusercontent.com/84019859/232475787-6a4f2c0c-a1a9-41a1-a8b0-fea47ad15463.jpg)
 
 ![0b6064588cbba641626c8b15550335d](https://user-images.githubusercontent.com/84019859/232471225-f9c6c752-f861-4264-8d00-b0f86028b281.png)
  

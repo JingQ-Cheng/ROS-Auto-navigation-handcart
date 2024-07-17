@@ -7,6 +7,8 @@ This project is an ROS autonomous navigation trolley. The ROS robot uses a troll
   
   Why do I use a cart? Because the price of buying a cart is very cheap, about $6 can be bought. It is larger, more powerful transport, cheaper than going online to buy a custom car chassis,you can even put your laptop on it.
 
+  The project use ubuntu 18 ；ros versions: melodic
+
 My E-mail: 2548383742@qq.com
   
   本项目是一辆ROS自主导航小推车。该ROS机器人将小推车作为底盘，并装载了两个直流电机以产生动力，实现了自主定位，导航，slam，opencv等功能。

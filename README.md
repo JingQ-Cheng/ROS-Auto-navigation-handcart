@@ -20,15 +20,13 @@
 
 My E-mail: 2548383742@qq.com
 
-**package introduce：**
+# **package introduce：**
 
 - uart_set
   The function of this part of the code is to establish communication between the PC and the MCU by UART. 
   
   use Command 
-   ``` xml
-  roslaunch uart_set uart_set.launch
-   ``` 
+   ```roslaunch uart_set uart_set.launch``` 
   If the communication is abnormal, please run it independently and check whether the information of the node is received or sent incorrectly.
 
   通信层代码，这部分代码负责上下位机通信，如果通信发生异常，请独立运行并检查该节点的信息是否有接收或者发送的错误。
@@ -38,10 +36,8 @@ My E-mail: 2548383742@qq.com
   The package provides the function to control the car using the keyboard
 
   Command：
-  ``` xml
-  roslaunch uart_set uart_set.launch
-  roslaunch keyboard keyboard_control.launch
-  ```
+  ```roslaunch uart_set uart_set.launch```
+  ```roslaunch keyboard keyboard_control.launch```
 
 - car_navigation 
   
@@ -107,12 +103,15 @@ My E-mail: 2548383742@qq.com
   and open the rviz on the PC
 
 -car_description
+  
   There's an urdf to describe the model of the car.
 
 -lsn10
+  
   This is the Lidar feature pack, you can replace it with your radar SDK.
 
 -imu_package
+  
   This is the imu feature pack, you can replace it with your imu SDK.
 
   

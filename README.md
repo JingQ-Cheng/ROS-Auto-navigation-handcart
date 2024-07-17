@@ -76,6 +76,7 @@ roslaunch car_navigation hardware.launch 启动硬件层
   
   在cartographer_ws打开一个终端中执行编译：
   source install_isolated/setup.bash
+
   启动carto建图功能：
   roslaunch cartographer_ros carto_star.launch
   

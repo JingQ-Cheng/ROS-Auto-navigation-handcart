@@ -102,15 +102,15 @@ My E-mail: 2548383742@qq.com
   ```roslaunch car_navigation nav_neo.launch```
   and open the rviz on the PC
 
--car_description
+- car_description
   
   There's an urdf to describe the model of the car.
 
--lsn10
+- lsn10
   
   This is the Lidar feature pack, you can replace it with your radar SDK.
 
--imu_package
+- imu_package
   
   This is the imu feature pack, you can replace it with your imu SDK.
 

@@ -79,7 +79,7 @@ My E-mail: 2548383742@qq.com
 
   Save the map named gmapping1 (found in the file where the project is located)
 
-- cartographer（谷歌商业化算法，成熟稳定，适合大图，笔记本建议用这个）
+- Cartographer
 
   cartographer is not included in this project and needs to be installed independently,and put two folders in the cartographer_set in github into corresponding positions after installation.
 

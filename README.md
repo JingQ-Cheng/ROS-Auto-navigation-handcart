@@ -66,22 +66,22 @@ roslaunch car_navigation hardware.launch 启动硬件层
 
 - cartographer算法（谷歌商业化算法，成熟稳定，适合大图，笔记本建议用这个）
 
- cartographer是没有包含在本工程中的，需要独立安装，建议使用小鱼一键安装中的catographer一键安装功能，安装后将github中的cartographer_set中的两个文件夹放入对应的位置。
-cartographer_ws/src/cartographer_ros/cartographer_ros/launch/carto_star.launch
-cartographer_ws/src/cartographer_ros/cartographer_ros/configuration_files/My_delta_lidar.lua
-（cartographer_ws代指命名的catographer安装的文件夹名称）
-
-在cartographer_ws打开一个终端中执行编译：
-source install_isolated/setup.bash
-启动carto建图功能：
-roslaunch cartographer_ros carto_star.launch
-
-然后在ros的工作空间下执行：
-roslaunch car_navigation carto_slam.launch
-
-目前该算法的配置是同时使用imu和激光，实测融合编码器后反而效果变差，具体可能因车而异。
-如果你修改了该两个文件，都需要在cartographer_ws下执行
-catkin_make_isolated --install --use-ninja进行编译。
+  cartographer是没有包含在本工程中的，需要独立安装，建议使用小鱼一键安装中的catographer一键安装功能，安装后将github中的cartographer_set中的两个文件夹放入对应的位置。
+  cartographer_ws/src/cartographer_ros/cartographer_ros/launch/carto_star.launch
+  cartographer_ws/src/cartographer_ros/cartographer_ros/configuration_files/My_delta_lidar.lua
+  （cartographer_ws代指命名的catographer安装的文件夹名称）
+  
+  在cartographer_ws打开一个终端中执行编译：
+  source install_isolated/setup.bash
+  启动carto建图功能：
+  roslaunch cartographer_ros carto_star.launch
+  
+  然后在ros的工作空间下执行：
+  roslaunch car_navigation carto_slam.launch
+  
+  目前该算法的配置是同时使用imu和激光，实测融合编码器后反而效果变差，具体可能因车而异。
+  如果你修改了该两个文件，都需要在cartographer_ws下执行
+  catkin_make_isolated --install --use-ninja进行编译。
 
 
 - 导航功能使用

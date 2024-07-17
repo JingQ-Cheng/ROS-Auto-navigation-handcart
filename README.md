@@ -43,6 +43,18 @@ My E-mail: 2548383742@qq.com
   ```roslaunch uart_set uart_set.launch```
   ```roslaunch keyboard keyboard_control.launch```
 
+- car_description
+  
+  There's an urdf to describe the model of the car.
+
+- lsn10
+  
+  This is the Lidar feature pack, you can replace it with your radar SDK.
+
+- imu_package
+  
+  This is the imu feature pack, you can replace it with your imu SDK.
+
 - car_navigation 
   
   The launch script of autonomous navigation and mapping is written. The algorithm ontology is delivered by ros and is not included in this function package.
@@ -54,7 +66,7 @@ My E-mail: 2548383742@qq.com
   自主导航和建图，编写了自主导航和建图的launch脚本，算法本体由ros自带，不在本功能包中。
   在使用本文件夹下任何建图或导航功能前，都需要先启动硬件。
 
-# use slam
+## use slam
   建图功能使用
 
 - Gamping
@@ -88,7 +100,7 @@ My E-mail: 2548383742@qq.com
   ```catkin_make_isolated --install --use-ninja```
 
 
-# use Navigation
+## use Navigation
 
 - put the pc on the car
   ```roslaunch car_navigation slam_and_nav.launch```
@@ -106,17 +118,7 @@ My E-mail: 2548383742@qq.com
   ```roslaunch car_navigation nav_neo.launch```
   and open the rviz on the PC
 
-- car_description
-  
-  There's an urdf to describe the model of the car.
 
-- lsn10
-  
-  This is the Lidar feature pack, you can replace it with your radar SDK.
-
-- imu_package
-  
-  This is the imu feature pack, you can replace it with your imu SDK.
 
   
 

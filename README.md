@@ -20,11 +20,109 @@
 
 My E-mail: 2548383742@qq.com
 
+**package introduce：**
+
+- uart_set
+  The function of this part of the code is to establish communication between the PC and the MCU by UART. 
+  
+  use Command 
+   ``` xml
+  roslaunch uart_set uart_set.launch
+   ``` 
+  If the communication is abnormal, please run it independently and check whether the information of the node is received or sent incorrectly.
+
+  通信层代码，这部分代码负责上下位机通信，如果通信发生异常，请独立运行并检查该节点的信息是否有接收或者发送的错误。
+  
+
+- keyboard
+  The package provides the function to control the car using the keyboard
+
+  Command：
+  ``` xml
+  roslaunch uart_set uart_set.launch
+  roslaunch keyboard keyboard_control.launch
+  ```
+
+- car_navigation 
+  
+  The launch script of autonomous navigation and mapping is written. The algorithm ontology is delivered by ros and is not included in this function package.
+  Before you can use any of the mapping or navigation features in this folder, you need to enable the hardware.
+
+   Command：
+    ```roslaunch car_navigation hardware.launch```
+  
+  自主导航和建图，编写了自主导航和建图的launch脚本，算法本体由ros自带，不在本功能包中。
+  在使用本文件夹下任何建图或导航功能前，都需要先启动硬件。
+
+  # use slam:
+  建图功能使用
+
+- Gamping
+
+  ```roslaunch car_navigation gmaping_mapping.launch ```
+
+  ```rosrun map_server map_saver -f gmapping1```
+
+  Save the map named gmapping1 (found in the file where the project is located)
+
+- cartographer（谷歌商业化算法，成熟稳定，适合大图，笔记本建议用这个）
+
+  cartographer is not included in this project and needs to be installed independently,and put two folders in the cartographer_set in github into corresponding positions after installation.
+
+    *cartographer_ws/src/cartographer_ros/cartographer_ros/launch/carto_star.launch*
+
+   *cartographer_ws/src/cartographer_ros/cartographer_ros/configuration_files/My_delta_lidar.lua*
+
+  （cartographer_ws refers to the named folder name of the catographer installation）
+  
+  command in cartographer_ws to compile：
+  ```source install_isolated/setup.bash```
+
+  command for carto slam：
+  ```roslaunch cartographer_ros carto_star.launch```
+  
+  and then command in your ros workspace：
+  ```roslaunch car_navigation carto_slam.launch```
+
+   If you modify these two files, they need to be command in cartographer_ws
+  ```catkin_make_isolated --install --use-ninja```
+
+
+# use Navigation
+
+- put the pc on the car
+  ```roslaunch car_navigation slam_and_nav.launch```
+  slam and navigaton，no map
+
+  If you want to use a map , you need to set yaml in nav_star.launch to configure the target map, which defaults to an open space map
+  ```roslaunch car_navigation nav_pc.launch```
+
+- Multicomputer communication，put the Single board computer(such as RaspberryPI) on the car. you must confige Multicomputer communication for Single board computer and PC
+  The project file needs to be installed and compiled on both devices
+
+   ```roslaunch car_navigation hardware.launch```
+
+  Independent navigation on a single board computer：
+  ```roslaunch car_navigation nav_neo.launch```
+  and open the rviz on the PC
+
+-car_description
+  There's an urdf to describe the model of the car.
+
+-lsn10
+  This is the Lidar feature pack, you can replace it with your radar SDK.
+
+-imu_package
+  This is the imu feature pack, you can replace it with your imu SDK.
+
+  
 演示视频地址demo video： https://www.bilibili.com/video/BV1fj411D7Xz/?share_source=copy_web&vd_source=ba09f5329ccbdf0cbc6d31f78a69ca93
 
 ![car](https://user-images.githubusercontent.com/84019859/232475787-6a4f2c0c-a1a9-41a1-a8b0-fea47ad15463.jpg)
 
 ![0b6064588cbba641626c8b15550335d](https://user-images.githubusercontent.com/84019859/232471225-f9c6c752-f861-4264-8d00-b0f86028b281.png)
+ 
+
  
  我在本项目中使用了NanoPi neo4作为小推车的ROS主控，并用笔记本电脑和rk3399进行多机通信。
  
@@ -32,76 +130,6 @@ My E-mail: 2548383742@qq.com
 
 
 
-
-各package功能解释：
-
-- uart_set
-
-  通信层代码（重要），这部分代码负责上下位机通信，如果通信发生异常，请独立运行并检查该节点的信息是否有接收或者发送的错误。
-roslaunch uart_set uart_set.launch 
-
-
-- keyboard
-
-  编写了键盘遥控小车的代码，执行keyboard_control.launch即可人工操控行驶。
-遥控功能使用
-roslaunch uart_set uart_set.launch
-roslaunch keyboard keyboard_control.launch 
-如果您中途重启了通信层，keyboard同样需要重新启动才能继续使用遥控功能。
-
-
-- car_navigation 
-  
-  自主导航和建图，编写了自主导航和建图的launch脚本，算法本体由ros自带，不在本功能包中。
-在使用本文件夹下任何建图或导航功能前，都需要先启动硬件。
-roslaunch car_navigation hardware.launch 启动硬件层
-
-建图功能使用
-
-- Gamping算法（slam经典算法）
-
-  roslaunch car_navigation gmaping_mapping.launch 使用gmaping算法建图
-
-  rosrun map_server map_saver -f gmapping1 保存名为gmapping1的地图（在工程所在的文件中可以找到）
-
-- cartographer算法（谷歌商业化算法，成熟稳定，适合大图，笔记本建议用这个）
-
-  cartographer是没有包含在本工程中的，需要独立安装，建议使用小鱼一键安装中的catographer一键安装功能，安装后将github中的cartographer_set中的两个文件夹放入对应的位置。
-
-  cartographer_ws/src/cartographer_ros/cartographer_ros/launch/carto_star.launch
-
-   cartographer_ws/src/cartographer_ros/cartographer_ros/configuration_files/My_delta_lidar.lua
-
-  （cartographer_ws代指命名的catographer安装的文件夹名称）
-  
-  在cartographer_ws打开一个终端中执行编译：
-  source install_isolated/setup.bash
-
-  启动carto建图功能：
-  roslaunch cartographer_ros carto_star.launch
-  
-  然后在ros的工作空间下执行：
-  roslaunch car_navigation carto_slam.launch
-  
-  目前该算法的配置是同时使用imu和激光，实测融合编码器后反而效果变差，具体可能因车而异。
-  如果你修改了该两个文件，都需要在cartographer_ws下执行
-  catkin_make_isolated --install --use-ninja进行编译。
-
-
-- 导航功能使用
-
-  在车上运行工控机/PC
-  roslaunch car_navigation slam_and_nav.launch 同时建图和导航（无地图下使用）
-
-  roslaunch car_navigation nav_pc.launch  pc或者工控机使用自主导航（有地图，需要在nav_star.launch中设置yaml来配置目标地图，默认是一张空地图）
-
-- 多机通信，在车上运行卡片电脑。
-
-  同样需要在单板机上先运行 roslaunch car_navigation hardware.launch
-
-  单板机下独立运行导航：roslaunch car_navigation nav_neo.launch 适合在，用pc终端rviz即可查看
-
-  边缘计算模式：在PC上运行roslaunch car_navigation nav_edge.launch 进行算法运算。
 
 ![e282582e45058430a3ec91b5ef68e14](https://user-images.githubusercontent.com/84019859/232469930-fcb0ad56-5f2d-4548-8096-922f7cd20c88.png)
 ![实验室建图2](https://user-images.githubusercontent.com/84019859/232491840-a10bdd55-4861-425c-8440-fc6eb494074b.png)

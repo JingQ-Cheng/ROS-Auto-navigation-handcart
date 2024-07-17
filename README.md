@@ -67,8 +67,11 @@ roslaunch car_navigation hardware.launch 启动硬件层
 - cartographer算法（谷歌商业化算法，成熟稳定，适合大图，笔记本建议用这个）
 
   cartographer是没有包含在本工程中的，需要独立安装，建议使用小鱼一键安装中的catographer一键安装功能，安装后将github中的cartographer_set中的两个文件夹放入对应的位置。
+
   cartographer_ws/src/cartographer_ros/cartographer_ros/launch/carto_star.launch
-  cartographer_ws/src/cartographer_ros/cartographer_ros/configuration_files/My_delta_lidar.lua
+
+   cartographer_ws/src/cartographer_ros/cartographer_ros/configuration_files/My_delta_lidar.lua
+
   （cartographer_ws代指命名的catographer安装的文件夹名称）
   
   在cartographer_ws打开一个终端中执行编译：
